@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <title>Premium Book Gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background: #050505;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .gallery-header { text-align: center; margin-bottom: 60px; }
+        .gallery-header h1 {
+            font-size: 3rem;
+            background: linear-gradient(to right, #ffd700, #ff8c00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .book-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            overflow: hidden;
+            transition: 0.4s ease-in-out;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-15px);
+            border-color: #ffd700;
+            box-shadow: 0 15px 35px rgba(255, 215, 0, 0.15);
+        }
+
+        /* Image link styling */
+        .book-img-link {
+            display: block;
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+        }
+
+        .glass-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .glass-card:hover img { transform: scale(1.1); }
+
+        .card-info { padding: 25px; }
+        .card-info h3 { margin: 0; font-size: 22px; color: #ffd700; }
+        .card-info p { color: #aaa; margin: 8px 0; font-style: italic; }
+
+        /* Rating Stars */
+        .rating { color: #ff8c00; font-size: 14px; margin-bottom: 15px; }
+
+        /* Action Buttons */
+        .btn-group { display: flex; gap: 10px; }
+
+        .read-btn {
+            flex: 2;
+            background: #ffd700;
+            color: black;
+            text-align: center;
+            padding: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .download-btn {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-align: center;
+            padding: 12px;
+            text-decoration: none;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .read-btn:hover { background: white; transform: scale(1.05); }
+        .download-btn:hover { background: rgba(255, 255, 255, 0.2); }
+
+        .category-tag {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 6px 15px;
+            border-radius: 30px;
+            font-size: 11px;
+            border: 1px solid #ffd700;
+            z-index: 2;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .back-link {
+            color: #ffd700;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">
+        <i class="fas fa-arrow-left"></i> डैशबोर्ड पर वापस जाएँ
+    </a>
+
+    <div class="gallery-header">
+        <h1>✨ Premium Library</h1>
+        <p>अपनी पसंदीदा किताब चुनें और पढ़ना शुरू करें</p>
+    </div>
+
+    <div class="book-container">
+        
+        <div class="glass-card">
+            <span class="category-tag">bussiness Mindset</span>
+            <a href="richnpoor.pdf" target="_blank" class="rich.peg">
+                <img src="rich.jpeg" alt="The Bussiness mindset">
+            </a>
+            <div class="card-info">
+                <h3>The Bussiness mindset</h3>
+                <p>रॉबर्ट टी. कियोसाकी</p>
+                <div class="rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> (4.8)
+                </div>
+                <div class="btn-group">
+                    <a href="richnpoor.pdf" target="_blank" class="read-btn">अभी पढ़ें</a>
+                    <a href="richnpoor.pdf" download class="download-btn"><i class="fas fa-download"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="glass-card">
+            <span class="category-tag">Habits</span>
+            <a href="habit.pdf" target="_blank" class="book-img-link">
+                <img src="habit.jpeg" alt="Atomic Habits">
+            </a>
+            <div class="card-info">
+                <h3>Atomic Habits</h3>
+                <p>जेम्स क्लियर</p>
+                <div class="rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> (5.0)
+                </div>
+                <div class="btn-group">
+                    <a href="habit.pdf" target="_blank" class="read-btn">अभी पढ़ें</a>
+                    <a href="habit.pdf" download class="download-btn"><i class="fas fa-download"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="glass-card">
+            <span class="category-tag">Reading stories</span>
+            <a href="moral.pdf" target="_blank" class="book-img-link">
+                <img src="moral.jpeg" alt="Book Cover">
+            </a>
+            <div class="card-info">
+                <h3>Moral stories for childrens</h3>
+                <p>मुंशी प्रेमचंद</p>
+                <div class="rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> (4.2)
+                </div>
+                <div class="btn-group">
+                    <a href="moral.pdf" target="_blank" class="read-btn">अभी पढ़ें</a>
+                    <a href="moral.pdf" download class="download-btn"><i class="fas fa-download"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="glass-card">
+            <span class="category-tag">अनुवादक</span>
+            <a href="basik.pdf" target="_blank" class="book-img-link">
+                <img src="translate.jpeg" alt="हिंदी और अंग्रेजी अनुवाद">
+            </a>
+            <div class="card-info">
+                <h3>translator</h3>
+                <p>हरिवंश राय बच्चन</p>
+                <div class="rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> (4.8)
+                </div>
+                <div class="btn-group">
+                    <a href="basik.pdf" target="_blank" class="read-btn">अभी पढ़ें</a>
+                    <a href="basik.pdf" download class="download-btn"><i class="fas fa-download"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="glass-card">
+            <span class="category-tag">computer skills</span>
+            <a href="comp.pdf" target="_blank" class="book-img-link">
+                <img src="com.png" alt="a good Habits">
+            </a>
+            <div class="card-info">
+                <h3>चार्ल्स बैबेज</h3>
+                <p>basic computer knowledge</p>
+                <div class="rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> (4.8)
+                </div>
+                <div class="btn-group">
+                    <a href="comp.pdf" target="_blank" class="read-btn">अभी पढ़ें</a>
+                    <a href="comp.pdf" download class="download-btn"><i class="fas fa-download"></i></a>
+                </div>
+            </div>
+        </div>
+<div class="glass-card">
+            <span class="category-tag">bussiness Mindset</span>
+            <a href="sanchar.pdf" target="_blank" class="rich.peg">
+                <img src="sanchar.jpeg" alt="The Bussiness mindset">
+            </a>
+            <div class="card-info">
+                <h3>communication</h3>
+                <p>Nikki Stanton</p>
+                <div class="rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> (4.8)
+                </div>
+                <div class="btn-group">
+                    <a href="sanchar.pdf" target="_blank" class="read-btn">अभी पढ़ें</a>
+                    <a href="sanchar.pdf" download class="download-btn"><i class="fas fa-download"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // आप यहाँ क्लिक काउंट या एनालिटिक्स का कोड भी जोड़ सकते हैं
+    </script>
+</body>
+</html>
